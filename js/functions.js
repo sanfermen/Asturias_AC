@@ -1,3 +1,6 @@
+import { motorhomes } from "./json.js";
+import { Motorhomes } from "./classes.js";
+
 // Función para extraer datos del archivo .json
 async function fetchData(url) {
 	try {
@@ -12,18 +15,12 @@ async function fetchData(url) {
 	}
 }
 
-/* function fetchData(url) {
-	return fetch(url)
-		.then(response => {
-			if (!response.ok) {
-				throw new Error (`Error al cargar el json: ${response.status}`);
-			}
-			return response.json();
-		})
-		.catch(error => {
-			console.error('Error al cargar json:', error);
-			return [];
-		});
-} */
+function displayAreas(id) {
+	const area = motorhomes.find(a => a.id === Number(id));
+	if (area) {
+		const container = document.getElementById('card-container');
+		container.innerHTML = area.displayCard();
+		document.getElementById('text-container').style.display = 'none';}
+}
 
-export {fetchData}
+export {fetchData, displayAreas};

@@ -1,9 +1,142 @@
-#map { 
-	height: 800px;
-	width: 800px;
+/* Estilo general */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-img {
-	height: 200px;
-	width: 250px;
+body {
+	background-color: rgb(7, 62, 75);
+	font-family: ;
+}
+
+/* Estilos del header */
+#header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+#logo {
+	height: 30%;
+	display: flex;
+	justify-content: right;
+	margin: 10px;
+}
+
+.menu-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+	margin: 10px;
+}
+
+.bar {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* .nav-links {
+	list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+} */
+.nav-links {
+	list-style: none;
+	gap: 20px;
+    display: none;
+    flex-direction: row;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.nav-links.show {
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Evitar cambio de color al hacer clic */
+.nav-links li a:active, .nav-links li a:focus {
+    color: white;
+}
+
+#logo-header {
+	height: 10%;
+	width: 10%;
+	
+}
+
+/* Estilos del mapa */
+#map-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+#map {
+	flex: 2;
+	height: 800px;
+	width: 1000px;
+	margin: 20px;
+}
+
+#card-text {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	max-height: 800px;
+	background-color: #eeeef7;
+	padding: 20px;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+#card-text img {
+	height: 60%;
+	width: 70%;
+}
+
+#card-container {
+	text-align: center;
+}
+
+#pop-up {
+	text-align: center;
+	margin: 0px;
+}
+
+#pop-up-img {
+	height: 90%;
+	width: 95%;
+	margin: 0px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	background-color: #f9ebeb !important;
+}
+
+.show-details {
+	background-color: rgb(7, 62, 75);
+	color: #eeeef7;
+	padding: 8px;
+	border-radius: 5px;
 }
