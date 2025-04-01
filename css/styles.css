@@ -7,20 +7,28 @@
 
 body {
 	background-color: rgb(7, 62, 75);
-	font-family: ;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Estilos del header */
 #header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	padding: 10px 20px;
+	padding: 5px 10px;
+	background-color: transparent;
+	width: 100%;
 }
+
 #logo {
 	height: 30%;
 	display: flex;
 	justify-content: right;
-	margin: 10px;
+	margin: 5px;
 }
 
 .menu-burger {
@@ -38,17 +46,26 @@ body {
 .bar {
     width: 100%;
     height: 5px;
-    background-color: white;
     border-radius: 5px;
     transition: 0.3s;
 }
 
-/* .nav-links {
-	list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-} */
+header.dark-header .bar {
+	background-color: rgb(7, 62, 75);
+}
+
+header.light-header .bar {
+	background-color: #eeeef7;
+}
+
+header.dark-header .nav-links li a {
+    color: rgb(7, 62, 75);
+}
+
+header.light-header .nav-links li a {
+    color: #eeeef7;
+}
+
 .nav-links {
 	list-style: none;
 	gap: 20px;
@@ -60,21 +77,15 @@ body {
     padding: 10px;
 }
 
-.nav-links.show {
+.nav-links.active {
     display: flex;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: white;
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s;
-}
-
-/* Evitar cambio de color al hacer clic */
-.nav-links li a:active, .nav-links li a:focus {
-    color: white;
 }
 
 #logo-header {
@@ -83,31 +94,59 @@ body {
 	
 }
 
+.hidden {
+	display: none;
+}
+
+#home.hidden {
+	display: none;
+}
+
+/* Home */
+
+.home {
+	background-image: url(../assets/P7070269.JPG);
+	width: 100%;
+	min-height: 100vh;
+	background-size: cover;
+	font-size: 60px;
+	font-weight: bold;
+	color: #eeeef7;
+	display: flex;
+	justify-content: center;
+}
+
+#title_areas {
+	transform: translateY(75%);
+}
+
 /* Estilos del mapa */
 #map-section {
 	display: flex;
+	justify-items: center;
+	height: 100vh;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-start;
+	padding: 20px 0px;
 }
 
 #map {
 	flex: 2;
-	height: 800px;
-	width: 1000px;
-	margin: 20px;
+	height: 75%;
+	width: 85%;
+	margin-top: 90px;
+	margin: 100px 40px 40px;
 }
 
 #card-text {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	width: 300px;
 	max-height: 800px;
-	background-color: #eeeef7;
 	padding: 20px;
-	margin: 20px;
-	border-radius: 10px;
+	margin-top: 90px;
+	
 }
 
 #card-text img {
@@ -117,6 +156,21 @@ body {
 
 #card-container {
 	text-align: center;
+	background-color: #eeeef7;
+	border-radius: 10px;
+	padding: 5% 8%;
+}
+#card-container p, li {
+	text-align: left;
+}
+
+#card-container li {
+	list-style-type: none;
+	padding: 0% 7%;
+}
+
+#card-close {
+	border: none;
 }
 
 #pop-up {

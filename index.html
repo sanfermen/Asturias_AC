@@ -17,14 +17,37 @@
 </head>
 <body>
 	<header id="header">
-
+		<button class="menu-burger" id="menu-burger-id">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</button>
+		<nav id="menu">
+			<div class="menu__burger">
+				<ul class="nav-links">
+					<li class="menu__burger-link">
+						<a href="#home" id="home_menu">HOME</a>
+					</li>
+                    <li class="menu__burger-link">
+						<a href="#map-section" id="map_menu">MAPA</a>
+					</li>
+                    <li class="menu__burger-link">
+						<a href="#favorites" id="favorites_menu">MIS ÁREAS</a>
+					</li>
+                </ul>
+            </div>
+        </nav>
+		<div id="logo">
+			<img id="logo-header" src="./assets/ac_icon.png" alt="Motorhome icon">
+		</div>
 	</header>
 
 	<main>
-		<section id="home">
+		<section class="content home" id="home">
+			<h1 id="title_areas">Áreas de Asturias</h1>
 		</section>
 
-		<section id="map-section">
+		<section class= "content hidden" id="map-section">
 			<div id="map">
 			</div>
 
@@ -34,7 +57,7 @@
 			</div>
 		</section>
 
-		<section id="favorites">
+		<section class= "content hidden" id="favorites">
 		</section>
 	</main>
 

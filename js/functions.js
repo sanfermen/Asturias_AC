@@ -23,4 +23,25 @@ function displayAreas(id) {
 		document.getElementById('text-container').style.display = 'none';}
 }
 
-export {fetchData, displayAreas};
+function showSection(sectionId) {
+	// Convertimos todas las secciones en hidden
+
+	document.querySelectorAll('.content').forEach(section => {
+		section.classList.add('hidden');
+	})
+	document.getElementById(sectionId).classList.remove('hidden')
+}
+
+function changeHeaderColor(section) {
+	const header = document.querySelector("#header");
+
+	if (section === "home") {
+		header.classList.add("dark-header");
+		header.classList.remove("light-header");
+	} else {
+		header.classList.add("light-header");
+		header.classList.remove("dark-header");
+	}
+}
+
+export {fetchData, displayAreas, showSection, changeHeaderColor};

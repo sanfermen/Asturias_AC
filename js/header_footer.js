@@ -1,26 +1,30 @@
+import { showSection, changeHeaderColor } from "./functions.js";
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("header").innerHTML = 
-		`<button class="menu-burger" id="menu-burger-id">
-			<div class="bar"></div>
-			<div class="bar"></div>
-			<div class="bar"></div>
-		</button>
-		<nav>
-			<ul class="nav-links">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#map-section">Mapa</a></li>
-				<li><a href="#favorites">Mis Areas</a></li>
-			</ul>
-		</nav>
-			<div id="logo">
-			<img id="logo-header" src="./assets/ac_icon.png" alt="Motorhome icon">
-		</div>`;
+function toggleNav() {
+	let nav = document.querySelector(".nav-links");
+	nav.classList.toggle("active");
+}
 
-	const menuToggle = document.querySelector('.menu-burger');
-	const navLinks = document.querySelector('.nav-links');
+const burger_button = document.getElementById("menu-burger-id");
+burger_button.addEventListener("click", (e) => {
+	toggleNav();
+})
 
-    menuToggle.addEventListener("click", function() {
-        navLinks.classList.toggle('show');
-    });
+const map_burgerMenu = document.getElementById("map_menu");
+map_burgerMenu.addEventListener("click", (e) => {
+	showSection("map-section");
+	changeHeaderColor("map-section");
 });
+
+const fav_burgerMenu = document.getElementById("favorites_menu");
+fav_burgerMenu.addEventListener("click", (e) => {
+	showSection("favorites");
+	changeHeaderColor("favorites");
+	// TODO localstorage Tsundoku index.js
+});
+
+const home_burgerMenu = document.getElementById("home_menu");
+home_burgerMenu.addEventListener("click", (e) => {
+	showSection("home");
+	changeHeaderColor("home")
+})

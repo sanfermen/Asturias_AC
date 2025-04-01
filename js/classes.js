@@ -34,6 +34,7 @@ class Motorhomes extends Markers {
 
 	displayCard(){
 		return `
+		<button id="card-close">X</button>
 		<h3>${this.name}</h3>
 		<img src="${this.image}" alt="Imagen de ${this.name}"/>
 		<p><strong>Zona:</strong> ${this.zone}</p>
