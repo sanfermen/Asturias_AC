@@ -101,6 +101,9 @@ header.light-header .nav-links li a {
 #home.hidden {
 	display: none;
 }
+#map-section.hidden {
+	display: none;
+}
 
 /* Home */
 
@@ -117,7 +120,8 @@ header.light-header .nav-links li a {
 }
 
 #title_areas {
-	transform: translateY(75%);
+	position: absolute;
+	bottom: 20px;
 }
 
 /* Estilos del mapa */

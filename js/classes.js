@@ -34,7 +34,7 @@ class Motorhomes extends Markers {
 
 	displayCard(){
 		return `
-		<button id="card-close">X</button>
+		<button id="button-favorites"></button>
 		<h3>${this.name}</h3>
 		<img src="${this.image}" alt="Imagen de ${this.name}"/>
 		<p><strong>Zona:</strong> ${this.zone}</p>
@@ -46,7 +46,7 @@ class Motorhomes extends Markers {
 		<p><strong>Servicios:</strong> ${this.services}</p>
 		`
 	}
-
+	
 }
 
 export {Motorhomes, Markers}

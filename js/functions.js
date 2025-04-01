@@ -44,4 +44,6 @@ function changeHeaderColor(section) {
 	}
 }
 
+
+
 export {fetchData, displayAreas, showSection, changeHeaderColor};
