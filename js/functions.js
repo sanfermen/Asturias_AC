@@ -1,5 +1,5 @@
-import { motorhomes } from "./json.js";
-import { showFavorites, buttonFavorite } from "./fav_areas.js";
+import { motorhomes } from './json.js';
+import { showFavorites, buttonFavorite } from './fav_areas.js';
 
 // Función para extraer datos del archivo .json
 async function fetchData(url) {
@@ -17,14 +17,16 @@ async function fetchData(url) {
 
 function displayAreas(id) {
 	const area = motorhomes.find(a => a.id === Number(id));
+	const container = document.getElementById('card-container');
+	const textContainer = document.getElementById('text-container');
+
 	if (area) {
-		const container = document.getElementById('card-container');
 		container.innerHTML = area.displayCard();
-		document.getElementById('text-container').style.display = 'none';}
+		textContainer.style.display = 'none';}
 	
-	const favButton = document.querySelector(".button-favorites");
+	const favButton = document.querySelector('.button-favorites');
 	if (favButton) {
-		favButton.addEventListener("click", () => buttonFavorite(area));
+		favButton.addEventListener('click', () => buttonFavorite(area));
 	}
 }
 
@@ -35,20 +37,25 @@ function showSection(sectionId) {
 		section.classList.add('hidden');
 	})
 	document.getElementById(sectionId).classList.remove('hidden')
-}
 
-function changeHeaderColor(section) {
-	const header = document.querySelector("#header");
-
-	if (section === "home") {
-		header.classList.add("dark-header");
-		header.classList.remove("light-header");
-	} else {
-		header.classList.add("light-header");
-		header.classList.remove("dark-header");
+	if (sectionId === 'map-section') {
+		document.getElementById('text-container').style.display = 'block';
+		document.getElementById('card-container').innerHTML = '';
 	}
 }
 
-document.getElementById("favorites_menu").addEventListener("click", showFavorites);
+function changeHeaderColor(section) {
+	const header = document.querySelector('#header');
+
+	if (section === 'home') {
+		header.classList.add('dark-header');
+		header.classList.remove('light-header');
+	} else {
+		header.classList.add('light-header');
+		header.classList.remove('dark-header');
+	}
+}
+
+document.getElementById('favorites_menu').addEventListener('click', showFavorites);
 
 export {fetchData, displayAreas, showSection, changeHeaderColor};
