@@ -1,5 +1,5 @@
 import { motorhomes } from "./json.js";
-import { Motorhomes } from "./classes.js";
+import { showFavorites, buttonFavorite } from "./fav_areas.js";
 
 // Función para extraer datos del archivo .json
 async function fetchData(url) {
@@ -21,6 +21,11 @@ function displayAreas(id) {
 		const container = document.getElementById('card-container');
 		container.innerHTML = area.displayCard();
 		document.getElementById('text-container').style.display = 'none';}
+	
+	const favButton = document.querySelector(".button-favorites");
+	if (favButton) {
+		favButton.addEventListener("click", () => buttonFavorite(area));
+	}
 }
 
 function showSection(sectionId) {
@@ -44,6 +49,6 @@ function changeHeaderColor(section) {
 	}
 }
 
-
+document.getElementById("favorites_menu").addEventListener("click", showFavorites);
 
 export {fetchData, displayAreas, showSection, changeHeaderColor};

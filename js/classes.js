@@ -1,3 +1,4 @@
+import { findInLocalStorageArray } from "./localstorage.js";
 
 class Markers {
 	constructor(data, id) {
@@ -33,8 +34,13 @@ class Motorhomes extends Markers {
 	}
 
 	displayCard(){
+		const isFavorite = findInLocalStorageArray("favorites", this);
+		const heartIcon = isFavorite ? "❤️" : "🤍";
+
 		return `
-		<button id="button-favorites"></button>
+		<button class="button-favorites" data-id="${this.id}">
+        ${heartIcon}
+    	</button>
 		<h3>${this.name}</h3>
 		<img src="${this.image}" alt="Imagen de ${this.name}"/>
 		<p><strong>Zona:</strong> ${this.zone}</p>
@@ -50,3 +56,4 @@ class Motorhomes extends Markers {
 }
 
 export {Motorhomes, Markers}
+
