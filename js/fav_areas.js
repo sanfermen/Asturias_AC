@@ -17,7 +17,7 @@ function buttonFavorite(area) {
 
 	const favButton = document.querySelector(`.button-favorites[data-id="${area.id}"]`);
     if (favButton) {
-        favButton.innerHTML = favorites.find(fav => fav.id === area.id) ? "❤️" : "🤍";
+        favButton.innerHTML = favorites.find(fav => fav.id === area.id) ? "❤️" : "💙";
     }
 }
 
@@ -48,14 +48,14 @@ function showFavorites() {
 		}, data.id);
 		
         const card = document.createElement("div");
+		card.id = "fav-card";
         card.innerHTML = area.displayCard();
         
-        // Agregar evento al botón de quitar de favoritos
         const favButton = card.querySelector(".button-favorites");
         if (favButton) {
             favButton.addEventListener("click", () => {
                 buttonFavorite(area);
-                showFavorites(); // Volver a actualizar la lista
+                showFavorites();
             });
         }
 

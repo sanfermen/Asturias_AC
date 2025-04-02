@@ -40,6 +40,11 @@ document.addEventListener('click', (event) => {
 	}
 });
 
+const text_container = document.getElementById("text-container");
+const text_container__img = document.createElement("img");
+text_container__img.src = "/assets/blanquita.jpg"
+text_container.appendChild(text_container__img);
+
 export { motorhomes};
 
 init(url);

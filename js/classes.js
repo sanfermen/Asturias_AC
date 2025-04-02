@@ -35,7 +35,7 @@ class Motorhomes extends Markers {
 
 	displayCard(){
 		const isFavorite = findInLocalStorageArray("favorites", this);
-		const heartIcon = isFavorite ? "❤️" : "🤍";
+		const heartIcon = isFavorite ? "❤️" : "💙";
 
 		return `
 		<button class="button-favorites" data-id="${this.id}">
