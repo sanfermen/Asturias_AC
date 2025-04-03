@@ -18,11 +18,11 @@ async function fetchData(url) {
 function displayAreas(id) {
 	const area = motorhomes.find(a => a.id === Number(id));
 	const container = document.getElementById('card-container');
-	const textContainer = document.getElementById('text-container');
 
 	if (area) {
 		container.innerHTML = area.displayCard();
-		textContainer.style.display = 'none';}
+		container.style.backgroundColor = 'white';
+	}
 	
 	const favButton = document.querySelector('.button-favorites');
 	if (favButton) {
@@ -37,10 +37,11 @@ function showSection(sectionId) {
 		section.classList.add('hidden');
 	})
 	document.getElementById(sectionId).classList.remove('hidden')
+	const container = document.getElementById('card-container')
 
 	if (sectionId === 'map-section') {
-		document.getElementById('text-container').style.display = 'block';
-		document.getElementById('card-container').innerHTML = '';
+		container.innerHTML = '';
+		container.style.backgroundColor = 'transparent';
 	}
 }
 

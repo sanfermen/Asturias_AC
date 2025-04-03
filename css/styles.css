@@ -90,7 +90,7 @@ header.light-header .nav-links li a {
 
 #logo-header {
 	height: 50px;
-	width: auto%;
+	width: auto;
 }
 
 .hidden {
@@ -146,18 +146,16 @@ header.light-header .nav-links li a {
 	width: 85%;
 	margin-top: 90px;
 	margin: 100px 40px 40px;
+	box-shadow: 0 0 20px rgb(193, 193, 193);
 }
 
 #card-text {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	height: 65%;
-	overflow: auto;
+	
 	padding: 20px;
 	margin-top: 130px;
-	background-color: #eeeef7;
-	border-radius: 10px;
 	margin-right: 50px;
 }
 
@@ -171,8 +169,15 @@ header.light-header .nav-links li a {
 	padding: 5% 8%;
 	position: relative;
 	justify-items: center;
-	
+	border-radius: 10px;
+	height: 500px;
+	overflow: auto;
 }
+
+.background-color-white {
+	background-color: #eeeef7;
+}
+
 #card-container p, #card-container li, #card-container ul,
 #fav-card p, #fav-card li, #fav-card ul{
 	text-align: left;
@@ -211,12 +216,12 @@ header.light-header .nav-links li a {
 	border-radius: 5px;
 }
 
-#text-container img {
+/* #text-container img {
 	display: block;
 	margin: 0 auto;
 	max-width: 90%;
 	border-radius: 10px;
-}
+} */
 
 /* Sección favoritos */
 #favorites {
@@ -316,22 +321,22 @@ header.light-header .nav-links li a {
 		max-width: 90%;
 	}
 
-	#text-container {
+	/* #text-container {
 		background-image: url(../assets/IMG_20210725_135018.jpg);
 		background-size: cover;
 		background-position: center;
 		width: 100%;
 		height: 260px;
 		border-radius: 10px;
-	}
+	} */
 
 	#card-container {
 		padding: 0;
 	}
 
-	#text-container img {
+	/* #text-container img {
 		display: none;
-	}
+	} */
 
 	#fav-card .button-favorites, #card-container .button-favorites {
 		position: absolute;
