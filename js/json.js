@@ -20,19 +20,26 @@ let iconMarker = L.icon({
 
 let motorhomes = [];
 
-async function init(jsonFile) {
-	const jsonData = await fetchData(jsonFile);
-
-	motorhomes = jsonData.map((data, index) => new Motorhomes(data, index));
-
-	motorhomes.forEach(markerData => {
-		let coordenates = markerData.coordenates.split(',').map(Number);
-		L.marker(coordenates, {icon: iconMarker })
-			.addTo(mymap)
-			.bindPopup(markerData.popUp());
-	});
-}
-
+	async function init(jsonFile) {
+		const jsonData = await fetchData(jsonFile);
+		motorhomes = jsonData.map((data, index) => new Motorhomes(data, index));
+	
+		// Crear grupo de clusters
+		let markersCluster = L.markerClusterGroup();
+	
+		motorhomes.forEach(markerData => {
+			let coordenates = markerData.coordenates.split(',').map(Number);
+			let marker = L.marker(coordenates, {icon: iconMarker })
+				.bindPopup(markerData.popUp());
+	
+			// Agregar el marker al cluster
+			markersCluster.addLayer(marker);
+		});
+	
+		// Agregar el cluster al mapa
+		mymap.addLayer(markersCluster);
+	}
+	
 document.addEventListener('click', (event) => {
 	if (event.target.classList.contains('show-details')) {
 		const id = event.target.getAttribute('data-id');
