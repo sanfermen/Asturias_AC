@@ -22,6 +22,7 @@ function displayAreas(id, motorhomes) {
 	if (area) {
 		container.innerHTML = area.displayCard();
 		container.style.backgroundColor = 'white';
+		document.body.classList.add('card-container-visible')
 	}
 	
 	const favButton = document.querySelector('.button-favorites');
@@ -35,12 +36,13 @@ function showSection(sectionId) {
 	document.querySelectorAll('.content').forEach(section => {
 		section.classList.add('hidden');
 	})
-	document.getElementById(sectionId).classList.remove('hidden')
-	const container = document.getElementById('card-container')
+	document.getElementById(sectionId).classList.remove('hidden');
 
+	const container = document.getElementById('card-container')
 	if (sectionId === 'map-section') {
 		container.innerHTML = '';
 		container.style.backgroundColor = 'transparent';
+		document.body.classList.remove('card-container-visible');
 	}
 }
 

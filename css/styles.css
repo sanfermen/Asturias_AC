@@ -8,6 +8,7 @@
 body {
 	background-color: rgb(7, 62, 75);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	overflow-x: hidden;
 }
 
 /* Estilos del header */
@@ -129,24 +130,48 @@ header.light-header .nav-links li a {
 	bottom: 20px;
 }
 
+/* Ilustración furgo */
+.texto-fondo {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	max-width: 500px;
+	max-height: 200px;
+	min-width: 100px;
+	min-height: 100px;
+	top: 50%;
+	right: 5%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.texto-fondo img {
+	width: 100%;
+	height: auto;
+}
+
+.card-container-visible .texto-fondo {
+	display: none;
+}
+
 /* Estilos del mapa */
 #map-section {
 	display: flex;
-	justify-items: center;
 	height: 100vh;
-	flex-direction: row;
 	justify-content: space-between;
-	align-items: flex-start;
 	padding: 10px 0px;
+	gap: 20px;
 	flex-wrap: wrap;
-	overflow-y: auto;
 }
 
 #map {
 	flex: 2;
 	height: 90%;
 	width: 85%;
-	margin: 100px 40px 40px;
+	margin: 100px 20px 20px;
 	box-shadow: 0 0 20px rgb(193, 193, 193);
 	border-radius: 5px;
 }
@@ -157,24 +182,11 @@ header.light-header .nav-links li a {
 	flex-direction: column;
 	padding: 20px;
 	margin-top: 130px;
-	margin-right: 50px;
 }
 
 #card-text img {
 	width: 90%;
 	margin: 5px 0px
-}
-
-.texto-fondo {
-    position: absolute;
-    top: 50%;
-    right: 3%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: #eeeef7;
-    pointer-events: none; /* Evita que interfiera con clics */
-    z-index: 0;
 }
 
 #card-container {
@@ -228,15 +240,6 @@ header.light-header .nav-links li a {
 	padding: 8px;
 	border-radius: 5px;
 }
-
-/* #map-picture {
-	background-image: url(../assets/blanquita.jpg);
-	background-size: cover;
-	background-position: center;
-	width: auto;
-	height: 500px;
-	border-radius: 10px;
-} */
 
 /* Sección favoritos */
 #favorites {
@@ -309,7 +312,8 @@ header.light-header .nav-links li a {
 
 	#map {
 		width: 95%;
-		height: 150px;
+		height: 50vh;
+		margin: 70px 20px 10px 10px;
 	}
 
 	.leaflet-popup-content {
@@ -327,7 +331,7 @@ header.light-header .nav-links li a {
 	#card-text {
 		width: 90%;
 		height: 80vh;
-		margin: 20px auto;
+		margin: 10px;
 		padding: 10px;
 	}
 
@@ -336,24 +340,11 @@ header.light-header .nav-links li a {
 		max-width: 90%;
 	}
 
-	/* #map-picture {
-		background-image: url(../assets/IMG_20210725_135018.jpg);
-		background-size: cover;
-		background-position: center;
-		width: 100%;
-		height: 260px;
-		border-radius: 10px;
-	} */
-
 	#card-container {
 		padding: 0;
 		height: auto;
 		max-height: 200px;
 	}
-
-	/* #map-picture img {
-		display: none;
-	} */
 
 	#fav-card .button-favorites, #card-container .button-favorites {
 		position: absolute;
@@ -361,5 +352,15 @@ header.light-header .nav-links li a {
 		right: 1em;
 		border: none;
 		background: none;
+	}
+
+	.texto-fondo {
+		height: 50%;
+		max-height: 400px;
+		bottom: 10px;
+		top: auto;
+		right: auto;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
