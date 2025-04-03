@@ -45,6 +45,7 @@ document.addEventListener('click', (event) => {
 	if (event.target.classList.contains('show-details')) {
 		const id = event.target.getAttribute('data-id');
 		displayAreas(id);
+		document.getElementById('map-picture').classList.add('hidden');
 	}
 });
 
