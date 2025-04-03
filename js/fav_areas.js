@@ -1,6 +1,7 @@
 import { Motorhomes } from "./classes.js";
 import { getFromLocalStorage, saveToLocalStorage } from "./localstorage.js";
 
+// Funcionalidad del botón de favoritos
 function buttonFavorite(area) {
     const favorites = getFromLocalStorage("favorites") || [];
 
@@ -21,12 +22,14 @@ function buttonFavorite(area) {
     }
 }
 
+// Función para ver tarjetas en Favoritos
 function showFavorites() {
     const container = document.getElementById("favorites");
     const favorites = getFromLocalStorage("favorites") || [];
 
     container.innerHTML = "";
 
+	// Cambios porque no existe 'content' en localStorage
     favorites.forEach(data => {
 		const area = new Motorhomes({
 			Contacto: {

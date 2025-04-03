@@ -1,5 +1,6 @@
 import { findInLocalStorageArray } from './localstorage.js';
 
+// Clase para crear los marcadores de los puntos
 class Markers {
 	constructor(data, id) {
 		this.id = id;
@@ -11,6 +12,7 @@ class Markers {
 		console.log('url', this.image);
 	}
 
+	// Crear de una forma sencilla los PopUps de los marcadores
 	popUp(){
 		return `<div id='pop-up'>
 		<h3>${this.name}</h3><br>
@@ -18,10 +20,9 @@ class Markers {
 		<button class='show-details' data-id='${this.id}'>Ver detalles</button>
 		</div>`;
 	}
-
-
 }
 
+// Clase en caso de que los puntos sean areas de autocaravanas
 class Motorhomes extends Markers {
 	constructor(data, id){
 		super(data, id);
@@ -52,7 +53,6 @@ class Motorhomes extends Markers {
 		<p><strong>Servicios:</strong> ${this.services}</p>
 		`
 	}
-	
 }
 
 export {Motorhomes, Markers}

@@ -1,4 +1,3 @@
-import { motorhomes } from './json.js';
 import { showFavorites, buttonFavorite } from './fav_areas.js';
 
 // Función para extraer datos del archivo .json
@@ -15,7 +14,8 @@ async function fetchData(url) {
 	}
 }
 
-function displayAreas(id) {
+// Función para crear las tarjetas y función del botón de favoritos
+function displayAreas(id, motorhomes) {
 	const area = motorhomes.find(a => a.id === Number(id));
 	const container = document.getElementById('card-container');
 
@@ -30,9 +30,8 @@ function displayAreas(id) {
 	}
 }
 
+// Función para cambiar la sección a hidden y hacer que la última tarjeta seleccionada en el mapa se borre al volver
 function showSection(sectionId) {
-	// Convertimos todas las secciones en hidden
-
 	document.querySelectorAll('.content').forEach(section => {
 		section.classList.add('hidden');
 	})
@@ -45,6 +44,7 @@ function showSection(sectionId) {
 	}
 }
 
+// Cambiar el color del header según la sección en la que se esté
 function changeHeaderColor(section) {
 	const header = document.querySelector('#header');
 

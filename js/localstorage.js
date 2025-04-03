@@ -9,6 +9,7 @@ function saveToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
+// Recuperar de localStorage
 function getFromLocalStorage() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -32,34 +33,8 @@ function getFromLocalStorage() {
             Nombre: { content: data.name || "Nombre desconocido" }
         }, data.id);
     });
-
-    console.log("Datos con estructura corregida:", favorites);
+;
     return favorites;
-}
-
-// Añadir favoritos al array guardado en LocalStorage
-function addToLocalStorageArray (favorites, area) {
-	const array = getFromLocalStorage(favorites) || [];
-	const index = array.findIndex(element => element.id === area.id);
-	if (index !== -1) {
-		return;
-	}
-	array.push(area);
-	saveToLocalStorage(favorites, array);
-}
-
-// Eliminar favoritos del array guardado en LocalStorage
-function removeFromLocalStorageArray (favorites, area) {
-	const array = getFromLocalStorage(favorites);
-	if (!array) {
-		return;
-	}
-	const index = array.findIndex(element => element.id === area.id);
-	if (index === -1) {
-		return;
-	}
-	array.splice(index, 1);
-	saveToLocalStorage(favorites, array);
 }
 
 // Buscar areas en lo guardado
